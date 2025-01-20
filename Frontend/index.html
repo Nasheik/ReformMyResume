@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Resume Autofill</title>
+</head>
+
+<body>
+    <h1>Upload Your Resume</h1>
+    <form id="resumeForm">
+        <input type="file" id="resume" name="resume" accept=".pdf,.docx" />
+        <button type="button" onclick="uploadResume()">Upload</button>
+    </form>
+    <h2>Extracted Information:</h2>
+    <div id="output"></div>
+
+    <script>
+        async function uploadResume() {
+            const fileInput = document.getElementById('resume');
+            const formData = new FormData();
+            formData.append('file', fileInput.files[0]);
+
+            const response = await fetch('http://localhost:8000/upload-resume/', {
+                method: 'POST',
+                body: formData,
+            });
+
+            const result = await response.text();
+
+            document.getElementById('output').innerText = result;
+        }
+    </script>
+</body>
+
+</html>

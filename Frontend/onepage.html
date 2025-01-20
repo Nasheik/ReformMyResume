@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reform My Resume</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes rainbow-text {
+            0% {
+                color: red;
+            }
+
+            16% {
+                color: orange;
+            }
+
+            33% {
+                color: yellow;
+            }
+
+            50% {
+                color: green;
+            }
+
+            66% {
+                color: blue;
+            }
+
+            83% {
+                color: indigo;
+            }
+
+            100% {
+                color: violet;
+            }
+        }
+
+        .curved-text {
+            position: relative;
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            display: inline-block;
+            transform: rotate(0deg);
+            animation: rainbow-text 5s infinite linear;
+            margin-bottom: 1.5rem;
+        }
+
+        .curved-text span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(var(--angle));
+            transform-origin: 0 120px;
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-br from-blue-200 via-white to-blue-200 h-screen flex items-center justify-center font-sans">
+    <div class="text-center">
+        <h1 class="text-4xl md:text-6xl font-extrabold text-gray-800 mb-8">Reform My Resume</h1>
+        <!-- <h1 class="curved-text">
+            <span style="--angle: -40deg;">R</span>
+            <span style="--angle: -30deg;">e</span>
+            <span style="--angle: -20deg;">f</span>
+            <span style="--angle: -10deg;">o</span>
+            <span style="--angle: 0deg;">r</span>
+            <span style="--angle: 10deg;">m</span>
+            <span style="--angle: 20deg;"> </span>
+            <span style="--angle: 30deg;">M</span>
+            <span style="--angle: 40deg;">y</span>
+            <span style="--angle: 50deg;"> </span>
+            <span style="--angle: 60deg;">R</span>
+            <span style="--angle: 70deg;">e</span>
+            <span style="--angle: 80deg;">s</span>
+            <span style="--angle: 90deg;">u</span>
+            <span style="--angle: 100deg;">m</span>
+            <span style="--angle: 110deg;">e</span>
+        </h1> -->
+        <button
+            class="bg-blue-600 text-white font-medium px-6 py-3 rounded-lg shadow hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
+            Get Started
+        </button>
+    </div>
+</body>
+
+</html>
